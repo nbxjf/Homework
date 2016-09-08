@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+
+<script type="text/javascript" src="__ROOT__/Public/Index/js/laydate.js"></script>
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Index/css/Iframe.css" />
+<link rel="stylesheet" href="__ROOT__/Public/Index/utilLib/bootstrap.min.css" type="text/css" media="screen" />
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/Admin/css/style.css" />
+
+
+</head>
+<body style="padding:5%">
+    <form action="{:U('Index/StuIndex/work_upload',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data">
+        <table class="table">
+            <tr class="tb_title">
+                <td width="10%">课程名</td>
+                <td width="30%"><?php echo $info['cname'], '<input type="hidden" name="ccname" value="' . $info['cname'] . '">'?></td>
+                </td>
+            </tr>
+             <tr class="tb_title">
+                <td width="10%">作业题目</td>
+                <td width="30%"><?php echo $info['theme'], '<input type="hidden" name="theme" value="' . $info['theme'] . '">'?></td>
+                </td>
+            </tr>
+            <tr class="tb_title">
+                <td width="10%">附件上传</td>
+                <td width="30%"><input type="file" name="homework_attach" id="homework_attach" ></td>
+            </tr>
+            <tr class="tb_title">
+                <td width="10%">相对老师说的</td>
+                <td width="30%"><textarea style="width:300px;height:150px;" name="other"></textarea></td>
+            </tr>
+            <tr class="tb_title">
+                <td width="10%"></td>
+                <td width="30%"><input type="submit" value="确认上交作业"></td>
+            </tr>
+        </table>
+        </form>
+   
+</body>
+</html>

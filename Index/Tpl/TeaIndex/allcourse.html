@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>产品管理</title>
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Index/css/Iframe.css" />
+<link rel="stylesheet" href="__ROOT__/Public/Index/utilLib/bootstrap.min.css" type="text/css" media="screen" />
+</head>
+
+<body>
+<span class="cp_title">课程管理</span>
+<div class="add_cp">
+	<a href="#">所有课程</a>
+</div>
+<div class="table_con">
+	<table>
+    	<tr class="tb_title">
+        	<td width="15%">课程号</td>
+            <td width="25%">课程名</td>
+            <td width="10%">学分</td>
+            <td width="25%">选择班级</td>
+            <td width="25%">操作</td>
+        </tr>
+        <foreach name='data' item='v'>
+        <form action="{:U('Index/TeaIndex/choose_course')}" method="post">
+        <tr>
+        	<td width="15%" name="cno"><?php echo $v['cno'], '<input type="hidden" name="cno" value="' . $v['cno'] . '">'?></td>
+            <td width="25%" name="cname"><?php echo $v['cname'], '<input type="hidden" name="cname" value="' . $v['cname'] . '">'?></td>
+            <td width="10%" name="credit"><?php echo $v['credit'], '<input type="hidden" name="credit" value="' . $v['credit'] . '">'?></td>
+            <td width="25%">
+                <select name="choose_bno" id="choose_bno">  
+                    <option value ="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                    <foreach name="bno" item="va">
+                        <option value ="{$va['bno']}" >{$va['bno']}</option>
+                    </foreach>    
+                </select> 
+            </td>
+            <td width="25%">
+                <input class="sj_btn" type="submit" value="授课" />
+            </td>
+        </tr>
+        </form>
+        </foreach>
+       
+         <!-- <tr>
+            <td width="20%">445</td>
+            <td width="30%">意大利黑金花 石材产品</td>
+            <td width="22%">19/100</td>
+            <td width="28%">
+                <input class="bj_btn" type="button" value="编辑" />
+                <input class="sj_btn" type="button" value="上架" />
+                <input class="del_btn" type="button" value="删除" />
+            </td>
+                 </tr> -->
+        
+        
+    </table>
+    <br>
+    <div class="text-center" style="font-size:18px;">
+      <span>{$page}</span><br>
+
+      </div>
+</div>
+</body>
+</html>

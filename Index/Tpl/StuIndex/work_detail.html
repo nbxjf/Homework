@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Index/css/Iframe.css" />
+<link rel="stylesheet" href="__ROOT__/Public/Index/utilLib/bootstrap.min.css" type="text/css" media="screen" />
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/Admin/css/style.css" />
+
+</head>
+
+<body>
+<div class="table_con">
+    <table>
+        <tr class="tb_title">
+            <td width="10%">课程名</td>
+            <td width="30%">{$info['cname']}</td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">作业主题</td>
+            <td width="30%">{$info['homework_theme']}</td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">作业详情</td>
+            <td width="30%">{$detail}</td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">发布时间</td>
+            <td width="30%"><?php echo date('Y-m-d H:i',$info['publishtime'])?></td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">截止时间</td>
+            <td width="30%"><?php echo date('Y-m-d H:i',$info['deadline'])?></td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">有无附件</td>
+            <td width="10%">{$attachment}</td>
+            <td width="10%">
+            <if condition="$info['tmp_name']!=NULL">
+            <a href="{:U('Index/StuIndex/download',array('id'=>$info['id']))}"><input class="sj_btn" type="button" value="下载附件" style="width:70px"/></a>
+            <else />
+            </if>
+            </td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%"> 
+            </td>
+            <td width="30%">
+            </td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">
+                
+            </td>
+            <td width="30%">
+                <a href="{:U('Index/StuIndex/upload_homework',array('id' =>$info['id']))}"><input class="sj_btn" type="button" value="上交作业" style="width:70px"/></a>
+                <a href="{:U('Index/StuIndex/select_homework')}"><input class="bj_btn" type="button" value="返回上级" style="width:70px"/></a>
+            </td>
+        </tr>
+        
+    </table>
+    </div>
+</body>
+</html>

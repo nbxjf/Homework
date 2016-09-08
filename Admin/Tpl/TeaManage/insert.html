@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>作业管理系统后台</title>
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/Admin/css/style.css" />
+<script type="text/javascript" src="__ROOT__/Public/Admin/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/Admin/js/menu.js"></script>
+</head>
+<body>
+
+			<div class="right-nav">
+					<ul>
+							<li><img src="__ROOT__/Public/Admin/images/home.png"></li>
+								<li style="margin-left:25px;">您当前的位置：</li>
+								<li><a href="#">教师管理</a></li>
+								<li>></li>
+								<li><a href="#">录入教师信息</a></li>
+						</ul>
+			</div>
+			<div class="main" >
+				<header><h2>录入教师信息</h2></header>
+        <form action="{:U('Admin/TeaManage/teaInsert')}" action="post">
+        <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
+          <tr bgcolor="#FFFFFF">
+            <td>学工号 </td>
+            <td><input name="tno" id="tno" ></td>
+          </tr>
+          <tr bgcolor="#FFFFFF">
+            <td>姓名 </td>
+            <td><input name="tname" id="tname" ></td>
+          </tr>
+          <tr bgcolor="#FFFFFF">
+            <td>初始密码 </td>
+            <td><input name="password" id="password" ></td>
+          </tr>
+          <tr bgcolor="#FFFFFF">
+            <td></td>
+            <td><input type="submit" value="录入"></td>
+          </tr>
+    </table>
+    
+    </form>
+			</div>
+		</div>
+
+
+
+
+</body>
+</html>

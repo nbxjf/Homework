@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>产品管理</title>
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Index/css/Iframe.css" />
+<link rel="stylesheet" href="__ROOT__/Public/Index/utilLib/bootstrap.min.css" type="text/css" media="screen" />
+</head>
+
+<body>
+<span class="cp_title">作业管理</span>
+<div class="add_cp">
+	<a href="#">近期上交作业</a>
+</div>
+<div class="table_con">
+	<table>
+    	<tr class="tb_title">
+        	<td width="15%">课程名</td>
+            <td width="20%">作业主题</td>
+            <td width="10%">学号</td>
+            <td width="8%">姓名</td>
+            <td width="10%">班级</td>
+            <td width="15%">上交时间</td>
+            <td width="22%">操作</td>
+        </tr>
+        <foreach name="data" item="v">
+        <tr>
+            <td width="15%">{$v['cname']}</td>
+            <td width="20%">{$v['theme']}</td>
+            <td width="10%">{$v['sno']}</td>
+            <td width="8%">{$v['sname']}</td>
+            <td width="10%">{$v['bname']}</td>
+            <td width="15%"><?php echo date('Y-m-d H:i',$v['uptime']) ?></td>
+            <td width="22%">
+                <a href="{:U('Index/TeaIndex/work_detail',array('id'=>$v['id']))}"><input class="bj_btn" type="button" value="查看详情" style="width:70px"/></a>
+                <a href="{:U('Index/TeaIndex/download',array('id'=>$v['id']))}"><input class="sj_btn" type="button" value="下载作业" style="width:70px"/></a>
+                <if condition="$v['comment'] == NULL">
+                    <a href="{:U('Index/TeaIndex/work_detail',array('id'=>$v['id']))}"><input class="del_btn" type="button" value="打分" /></a>
+                    <else /><a href=""><input class="bj_btn" type="button" value="已打分" /></a>
+                </if>
+            </td>
+        </tr>
+       </foreach>
+         <!-- <tr>
+            <td width="20%">445</td>
+            <td width="30%">意大利黑金花 石材产品</td>
+            <td width="22%">19/100</td>
+            <td width="28%">
+                <input class="bj_btn" type="button" value="编辑" />
+                <input class="sj_btn" type="button" value="上架" />
+                <input class="del_btn" type="button" value="删除" />
+            </td>
+                 </tr> -->
+        
+        
+    </table>
+     <br>
+    <div class="text-center" style="font-size:18px;">
+      <span>{$page}</span><br>
+
+      </div>
+</div>
+</body>
+</html>

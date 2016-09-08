@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台模板管理系统</title>
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/Admin/css/style.css" />
+<script type="text/javascript" src="__ROOT__/Public/Admin/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/Admin/js/menu.js"></script>
+</head>
+<body>
+			<div class="right-nav">
+					<ul>
+							<li><img src="__ROOT__/Public/Admin/images/home.png"></li>
+								<li style="margin-left:25px;">您当前的位置：</li>
+								<li><a href="#">班级管理</a></li>
+								<li>></li>s
+								<li><a href="#">修改班级信息</a></li>
+						</ul>
+			</div>
+
+			<div class="main">
+				<form action="{:U('Admin/ClassManage/update_classInfo_action')}" method="post">
+      <table width="98%" align="center" border="0" cellpadding="4"  bgcolor="#CBD8AC" style="margin-bottom:15px">
+            <tr bgcolor="#FFFFFF">
+              <td>班级号</td>
+            <td><input type="text" name="newbno" value="{$info['bno']}"></td>
+        </tr> 
+         <tr bgcolor="#FFFFFF">
+              <td>班级名</td>
+            <td><input type="text" name="newbname" value="{$info['bname']}"></td>
+        </tr> 
+        <tr bgcolor="#FFFFFF">
+            <td>班级人数 </td>
+            <td><input type="text" name="newbnum" value="{$info['bnum']}"></td>
+        </tr>
+      </table>
+      <tr>
+        <input type="submit" style="margin-left:5%;width:10%" value="确定">
+      </tr>
+    </form>
+			</div>
+
+</div>
+</body>
+</html>

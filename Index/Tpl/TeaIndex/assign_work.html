@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+
+<script type="text/javascript" src="__ROOT__/Public/Index/js/laydate.js"></script>
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Index/css/Iframe.css" />
+<link rel="stylesheet" href="__ROOT__/Public/Index/utilLib/bootstrap.min.css" type="text/css" media="screen" />
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/Admin/css/style.css" />
+
+
+</head>
+<body style="padding:5%">
+    <form action="{:U('Index/TeaIndex/assign_work_action')}" method="post" enctype="multipart/form-data">
+        <table class="table">
+            <tr class="tb_title">
+                <td width="10%">课程名</td>
+                <td width="30%">
+                    <select name="choose_cname" id="choose_cname">  
+                    <option value ="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                    <foreach name="data" item="v">
+                        <option value ="{$v['cname']}" >{$v['cname']}</option>
+                    </foreach>    
+                </select> 
+                </td>
+            </tr>
+            <tr class="tb_title">
+                <td width="10%">作业主题</td>
+                <td width="30%"><input name="homework_theme" id="homework_theme" ></td>
+            </tr>
+            <tr class="tb_title">
+                <td width="10%">附件上传</td>
+                <td width="30%"><input type="file" name="homework_attach" id="homework_attach" ></td>
+            </tr>
+            <tr class="tb_title">
+                <td width="10%">作业详情</td>
+                <td width="30%"><textarea style="width:300px;height:150px;" name="homework_detail"></textarea></td>
+            </tr>
+            
+            <tr class="tb_title">
+                <td width="10%">截止时间</td>
+                <td width="30%"><input placeholder="请输入日期" class="laydate-icon" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" name="deadline"></td>
+            </tr>
+            <tr class="tb_title">
+                <td width="10%"></td>
+                <td width="30%"><input type="submit" value="确认发布作业"></td>
+            </tr>
+        </table>
+        </form>
+   
+</body>
+</html>

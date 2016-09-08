@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Index/css/Iframe.css" />
+<link rel="stylesheet" href="__ROOT__/Public/Index/utilLib/bootstrap.min.css" type="text/css" media="screen" />
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/Admin/css/style.css" />
+</head>
+
+<body style="padding:5%">
+    <form action="{:U('Index/TeaIndex/changepwdaction')}" method="post">
+    <table class="table">
+        <tr class="tb_title">
+            <td width="10%">学工号</td>
+            <td width="30%"><?php  echo $_SESSION[tno]?></td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">姓名</td>
+            <td width="30%"><?php  echo $_SESSION[tname]?></td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">新密码</td>
+            <td width="30%"><input name="newpassword" id="newpassword" ></td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%">确认密码</td>
+            <td width="30%"><input name="repassword" id="repassword" ></td>
+        </tr>
+        <tr class="tb_title">
+            <td width="10%"></td>
+            <td width="30%"><input type="submit" value="确认修改"></td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
